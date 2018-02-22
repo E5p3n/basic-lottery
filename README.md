@@ -7,4 +7,4 @@ During the sign-up it will ask for a name followed by the amount of tickets the 
 then repeat these questions according to the amount of players.
 After the sign-up is done, it will print out a winner after each enter press.
 
-You can edit the variables from line 7 to 13 to translate the program to other languages.
+You can edit the variables from line 10 to 17 to translate the program to other languages.
