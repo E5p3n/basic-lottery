@@ -14,7 +14,7 @@ prz = "prizes"
 tck = "tickets"
 ptt = "SELL MORE TICKETS"
 see = "See winner"
-ext = "Comfirm Close"
+ext = "Confirm Close"
 
 # Function for registering the amount of players and prizes
 def reg(i, m):
