@@ -1,8 +1,11 @@
 import random
 import sys
 
-plr_tck = []
-win_tck = []
+player_tickets = []
+winning_tickets = []
+
+players = 0
+prizes = 0
 
 amt = "Amount of"
 nam = "Name"
@@ -11,24 +14,21 @@ prz = "prizes"
 tck = "tickets"
 ptt = "SELL MORE TICKETS"
 see = "See winner"
+ext = "Comfirm Close"
 
-# Asks user for the amount of players
-while True:
-    try:
-        players = int(raw_input("%s %s: " % (amt, plr)))
-    except ValueError:
-        continue
-    else:
-        break
+# Function for registering the amount of players and prizes
+def reg(i, m):
+    while True:
+        try:
+            i = int(raw_input("%s %s: " % (amt, m)))
+        except ValueError:
+            continue
+        else:
+            return i
+            break
 
-# Asks user for the amount of prizes
-while True:
-    try:
-        prizes = int(raw_input("%s %s: " % (amt, prz)))
-    except ValueError:
-        continue
-    else:
-        break
+players = reg(players, plr)
+prizes = reg(prizes, prz)
 
 # Registers players and how many tickets they each have
 for x in range(0, players):
@@ -48,21 +48,24 @@ for x in range(0, players):
             continue
         else:
             for x in range(0, tickets):
-                plr_tck.append(player)
+                player_tickets.append(player)
             break
 
-random.shuffle(plr_tck)
+random.shuffle(player_tickets)
 
 # Picks out the winning tickets
 for x in range(0, prizes):
     try:
-        winner = plr_tck.pop()
-        win_tck.append(winner)
+        winner = player_tickets.pop()
+        winning_tickets.append(winner)
     except IndexError:
         print "\n%s!\n" % ptt
         sys.exit()
 
 # Prints out the winner after each Enter press
-for x in win_tck:
+for x in winning_tickets:
     raw_input("\n(Enter)%s: \n" % see)
     print x
+
+# Confirms program exit
+raw_input("\n %s (Enter)" % ext)
