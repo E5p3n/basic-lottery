@@ -59,7 +59,7 @@ for x in range(0, prizes):
         winner = player_tickets.pop()
         winning_tickets.append(winner)
     except IndexError:
-        print "\n%s!\n" % ptt
+        raw_input("\n%s!\n" % ptt)
         sys.exit()
 
 # Prints out the winner after each Enter press
